@@ -19,7 +19,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 329
     y: -241
-    width: 961
+    width: 960
     height: 2834
 --- !u!114 &114350483966674976
 MonoBehaviour:
