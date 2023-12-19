@@ -1,40 +1,74 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SC_PuzzleDisk : MonoBehaviour
 {
-    public bool inZone = false;
-    public GameObject puzzlePanel;
-    public GameObject cameraPlayer;
-    public GameObject cameraPuzzle;
+    public RectTransform[] rays;
+    public GameObject[] indicatorCubes; // Cube objects associated with each ray
+    public float rotationSpeed = 5f;
+    public float rotationAmount = 90f; // Defined rotation amount
 
-    // Update is called once per frame
+    private int currentIndex = 0;
+
+    void Start()
+    {
+        UpdateIndicator();
+    }
+
     void Update()
     {
-        if(inZone==true&&Input.GetKeyDown(KeyCode.F))
-        {
-            puzzlePanel.SetActive(true);
-            cameraPlayer.SetActive(false);
-            cameraPuzzle.SetActive(true);
-            Cursor.visible=true;
-            Cursor.lockState = CursorLockMode.Confined;
-        }
-        else if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            puzzlePanel.SetActive(false);
-            cameraPlayer.SetActive(true);
-            cameraPuzzle.SetActive(false);
-            Cursor.visible=false;
-        }
+        HandleInput();
     }
 
-    private void OnTriggerEnter(Collider PuzzleZone)
+    void HandleInput()
     {
-        inZone = true;
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            SelectNextRay();
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            SelectPreviousRay();
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            RotateCurrentRay(-rotationSpeed); // Rotate left by a continuous speed
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            RotateCurrentRay(rotationSpeed); // Rotate right by a continuous speed
+        }
+
+        UpdateIndicator();
     }
-    private void OnTriggerExit(Collider PuzzleZone)
+
+    void RotateCurrentRay(float amount)
     {
-        inZone = false;
+        rays[currentIndex].Rotate(Vector3.forward, amount);
+    }
+
+    void SelectNextRay()
+    {
+        currentIndex = (currentIndex + 1) % rays.Length;
+    }
+
+    void SelectPreviousRay()
+    {
+        currentIndex = (currentIndex - 1 + rays.Length) % rays.Length;
+    }
+
+    void UpdateIndicator()
+    {
+        // Disable all indicator cubes
+        foreach (var cube in indicatorCubes)
+        {
+            cube.SetActive(false);
+        }
+
+        // Enable the indicator cube for the current ray
+        if (currentIndex < indicatorCubes.Length)
+        {
+            indicatorCubes[currentIndex].SetActive(true);
+        }
     }
 }
