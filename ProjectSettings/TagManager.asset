@@ -14,6 +14,7 @@ TagManager:
   - ForceZone
   - GM
   - DiskZone
+  - ray
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Block
   - 
   - 
   - 
