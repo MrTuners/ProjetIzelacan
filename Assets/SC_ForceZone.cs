@@ -2,23 +2,33 @@ using UnityEngine;
 
 public class SC_ForceZone : MonoBehaviour
 {
+    public float upwardSpeed = 5f; // Adjust this value based on the desired speed
     private CharacterController characterController;
-    private bool isInsideCollider = false;
 
-    public float upwardForce = 50f;
-
-    void Start()
+    private void OnTriggerStay(Collider other)
     {
-        characterController = GetComponent<CharacterController>();
+        ApplyUpwardEffect(other.gameObject);
     }
 
-    void Update()
+    private void ApplyUpwardEffect(GameObject target)
     {
-        if (isInsideCollider)
+        if (characterController == null)
         {
-            // Apply upward force
-            Vector3 force = Vector3.up * upwardForce * Time.deltaTime;
-            characterController.Move(force);
+            characterController = target.GetComponent<CharacterController>();
+            if (characterController == null)
+            {
+                Debug.LogError("UpdraftZone requires a CharacterController on the target object.");
+                return;
+            }
+        }
+
+        // Ensure that the player is grounded before applying upward force
+        if (characterController.isGrounded)
+        {
+            Vector3 verticalMovement = Vector3.up * upwardSpeed * Time.deltaTime;
+
+            // Apply a constant upward force while inside the trigger zone
+            characterController.Move(verticalMovement);
         }
     }
 }

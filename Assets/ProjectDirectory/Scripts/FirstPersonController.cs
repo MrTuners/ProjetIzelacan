@@ -10,8 +10,9 @@ public class FirstPersonController : MonoBehaviour
     public bool isHiding = false;
     public bool isCrouching;
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
-    private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
+    private bool ShouldJump => Input.GetKeyDown(jumpKey) && (characterController.isGrounded||(canCoyoteJump&&!isJumping));
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchingAnimation && characterController.isGrounded;
+    private bool isInZone = false;
 
     [Header("Functional options")]
     [SerializeField] private bool canSprint = true;
@@ -21,6 +22,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private bool useStamina = true;
     [SerializeField] private bool useFootsteps = true;
     [SerializeField] private bool willSlide = true;
+    [SerializeField] private bool useCoyote = true;
 
     [Header("Controls")]
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
@@ -42,6 +44,10 @@ public class FirstPersonController : MonoBehaviour
     [Header("Jumping parameters")]
     [SerializeField] private float jumpForce =8.0f;
      [SerializeField] private float gravity = 30.0f;
+     [SerializeField] private bool isJumping = false;
+     [SerializeField] private bool canCoyoteJump = true;
+     [SerializeField] private float coyoteDuration = 0.5f;
+
 
      [Header("Crouch parameters")]
      [SerializeField] private float crouchHeight =0.5f;
@@ -126,6 +132,7 @@ public class FirstPersonController : MonoBehaviour
         if(canMove)
         {
             HandleMovementInput();
+            HandleCoyote();
             HandleMouseLook();
             if(canJump)
                 HandleJump();
@@ -147,6 +154,28 @@ public class FirstPersonController : MonoBehaviour
         float moveDirectionY = moveDirection.y;
         moveDirection = (transform.TransformDirection(Vector3.forward)*currentInput.x) + (transform.TransformDirection(Vector3.right)*currentInput.y);
         moveDirection.y = moveDirectionY;
+    }
+
+    private void HandleCoyote()
+    {
+        if(!characterController.isGrounded)
+        {
+            isJumping=true;
+            coyoteDuration -= Time.deltaTime;
+        } else
+        {
+            isJumping=false;
+            coyoteDuration = 0.5f;
+        }
+
+        if(coyoteDuration<=0)
+        {
+            canCoyoteJump=false;
+        }
+        else
+        {
+            canCoyoteJump=true;
+        }
     }
     private void HandleMouseLook()
     {

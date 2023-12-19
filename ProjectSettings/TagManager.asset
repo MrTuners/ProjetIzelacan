@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CinemachineTarget
+  - Plate
+  - buttonRange
+  - lavaTrigger
+  - lavaBlock
+  - Darts
+  - Axe
+  - ForceZone
+  - GM
   layers:
   - Default
   - TransparentFX
