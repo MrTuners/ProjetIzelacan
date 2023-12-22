@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 431444}
   - component: {fileID: 6431444}
+  - component: {fileID: 2753723077555978120}
   m_Layer: 0
   m_Name: PalmTreeDualStraightTwoSided
   m_TagString: Untagged
@@ -198,7 +199,7 @@ Transform:
   - {fileID: 431442}
   - {fileID: 431440}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &6431444
 MeshCollider:
@@ -222,3 +223,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6a19eafc9d24ca04fb2d532742cc211d, type: 3}
+--- !u!205 &2753723077555978120
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131444}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.39656928
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2331444}
+  - screenRelativeHeight: 0.08045216
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2331444}
+  - screenRelativeHeight: 0.009357114
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2331444}
+  m_Enabled: 1
