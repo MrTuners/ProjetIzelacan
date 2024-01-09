@@ -9,6 +9,12 @@ public class SC_BraseroMove : MonoBehaviour
     public GameObject blocObject;
     public Vector3 originPosition;
     public Vector3 targetPosition;
+    public float fXValue;
+    public float fYValue;
+    public float fZValue;
+    public float vXValue;
+    public float vYValue;
+    public float vZValue;
 
     void Start()
     {
@@ -40,12 +46,12 @@ public class SC_BraseroMove : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F))
         {
             //blocObject.transform.position = blocObject.transform.position + new Vector3(3,0,0);
-            targetPosition = targetPosition + new Vector3(2.5f, 0, 0);
+            targetPosition = targetPosition + new Vector3(fXValue, fYValue, fZValue);
         }
         if(Input.GetKeyDown(KeyCode.V))
         {
             //blocObject.transform.position = blocObject.transform.position + new Vector3(3,0,0);
-            targetPosition = targetPosition + new Vector3(-2.5f, 0, 0);
+            targetPosition = targetPosition + new Vector3(vXValue, vYValue, vZValue);
         }
     }
 }
