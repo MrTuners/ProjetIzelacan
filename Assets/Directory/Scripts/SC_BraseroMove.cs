@@ -18,16 +18,17 @@ public class SC_BraseroMove : MonoBehaviour
 
     void Start()
     {
-        originPosition = transform.position;
+        blocObject = this.gameObject;
+        originPosition = blocObject.transform.position;
         targetPosition = originPosition;
     }
 
     void Update()
     {
-        if(raycastScript.canMove==true)
+        if(raycastScript.BlocCanMove(blocObject)==true)
         {
             blocMovable=true;
-        } else if(raycastScript.canMove==false)
+        } else if(raycastScript.BlocCanMove(blocObject)==false)
         {
             blocMovable=false;
         }
@@ -37,7 +38,7 @@ public class SC_BraseroMove : MonoBehaviour
             MoveBloc();
         }
 
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime);
+        blocObject.transform.position = Vector3.Lerp(blocObject.transform.position, targetPosition, Time.deltaTime);
         
     }
 

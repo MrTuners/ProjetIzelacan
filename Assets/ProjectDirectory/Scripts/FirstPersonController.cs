@@ -10,9 +10,8 @@ public class FirstPersonController : MonoBehaviour
     public bool isHiding = false;
     public bool isCrouching;
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
-    private bool ShouldJump => Input.GetKeyDown(jumpKey) && (characterController.isGrounded||(canCoyoteJump&&!isJumping));
+    private bool ShouldJump => Input.GetKeyDown(jumpKey) && (characterController.isGrounded||canCoyoteJump);
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchingAnimation && characterController.isGrounded;
-    private bool isInZone = false;
 
     [Header("Functional options")]
     [SerializeField] private bool canSprint = true;
@@ -132,7 +131,22 @@ public class FirstPersonController : MonoBehaviour
         if(canMove)
         {
             HandleMovementInput();
-            HandleCoyote();
+            if(canJump == false && /*compteur coyote*/)
+            {
+                // Declenchement de compteur
+                canCoyoteJump = true;
+                HandleJump();
+            }
+            else if(canJump)
+            {
+                canCoyoteJump = false;
+                // compteur coyote reinitialisation
+            }
+            else 
+            {
+                canCoyoteJump = false;
+            }
+            //HandleCoyote();
             HandleMouseLook();
             if(canJump)
                 HandleJump();
