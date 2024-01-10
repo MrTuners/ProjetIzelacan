@@ -131,16 +131,16 @@ public class FirstPersonController : MonoBehaviour
         if(canMove)
         {
             HandleMovementInput();
-            if(canJump == false && /*compteur coyote*/)
+            if(canJump == false)
             {
-                // Declenchement de compteur
+                coyoteDuration -= Time.deltaTime;
                 canCoyoteJump = true;
                 HandleJump();
             }
             else if(canJump)
             {
                 canCoyoteJump = false;
-                // compteur coyote reinitialisation
+                coyoteDuration = 0.5f;
             }
             else 
             {
@@ -170,27 +170,27 @@ public class FirstPersonController : MonoBehaviour
         moveDirection.y = moveDirectionY;
     }
 
-    private void HandleCoyote()
-    {
-        if(!characterController.isGrounded)
-        {
-            isJumping=true;
-            coyoteDuration -= Time.deltaTime;
-        } else
-        {
-            isJumping=false;
-            coyoteDuration = 0.5f;
-        }
+    //private void HandleCoyote()
+    //{
+    //    if(!characterController.isGrounded)
+    //    {
+    //        isJumping=true;
+    //        coyoteDuration -= Time.deltaTime;
+    //    } else
+    //    {
+    //        isJumping=false;
+    //        coyoteDuration = 0.5f;
+    //    }
 
-        if(coyoteDuration<=0)
-        {
-            canCoyoteJump=false;
-        }
-        else
-        {
-            canCoyoteJump=true;
-        }
-    }
+    //    if(coyoteDuration<=0)
+    //    {
+    //        canCoyoteJump=false;
+    //    }
+    //    else
+    //    {
+    //        canCoyoteJump=true;
+    //    }
+    //}
     private void HandleMouseLook()
     {
         rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
