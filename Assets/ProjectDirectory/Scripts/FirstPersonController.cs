@@ -10,7 +10,7 @@ public class FirstPersonController : MonoBehaviour
     public bool isHiding = false;
     public bool isCrouching;
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
-    private bool ShouldJump => Input.GetKeyDown(jumpKey) && (characterController.isGrounded||canCoyoteJump);
+    private bool ShouldJump => Input.GetKeyDown(jumpKey) && (coyoteDuration>0);
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchingAnimation && characterController.isGrounded;
 
     [Header("Functional options")]
@@ -21,7 +21,6 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private bool useStamina = true;
     [SerializeField] private bool useFootsteps = true;
     [SerializeField] private bool willSlide = true;
-    [SerializeField] private bool useCoyote = true;
 
     [Header("Controls")]
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
@@ -39,13 +38,12 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField, Range(1,10)] private float lookSpeedY =2.0f;
     [SerializeField, Range(1,180)] private float upperLookLimit =80.0f;
     [SerializeField, Range(1,180)] private float lowerLookLimit =80.0f;
+    public bool lockLook = false;
 
     [Header("Jumping parameters")]
     [SerializeField] private float jumpForce =8.0f;
-     [SerializeField] private float gravity = 30.0f;
-     [SerializeField] private bool isJumping = false;
-     [SerializeField] private bool canCoyoteJump = true;
-     [SerializeField] private float coyoteDuration = 0.5f;
+    [SerializeField] private float gravity = 30.0f;
+    [SerializeField] private float coyoteDuration = 0.5f;
 
 
      [Header("Crouch parameters")]
@@ -69,11 +67,12 @@ public class FirstPersonController : MonoBehaviour
      //SLIDING PARAMETERS
 
      private Vector3 hitPointNormal;
+     public LayerMask slideMask;
      private bool IsSliding
      {
         get
         {
-            if(characterController.isGrounded && Physics.Raycast(transform.position, Vector3.down, out RaycastHit slopeHit, 2f))
+            if(characterController.isGrounded && Physics.Raycast(transform.position, Vector3.down, out RaycastHit slopeHit, 2f, slideMask))
             {
                 hitPointNormal=slopeHit.normal;
                 return Vector3.Angle(hitPointNormal, Vector3.up)> characterController.slopeLimit;
@@ -131,25 +130,11 @@ public class FirstPersonController : MonoBehaviour
         if(canMove)
         {
             HandleMovementInput();
-            if(canJump == false)
-            {
-                coyoteDuration -= Time.deltaTime;
-                canCoyoteJump = true;
-                HandleJump();
-            }
-            else if(canJump)
-            {
-                canCoyoteJump = false;
-                coyoteDuration = 0.5f;
-            }
-            else 
-            {
-                canCoyoteJump = false;
-            }
-            //HandleCoyote();
-            HandleMouseLook();
+            if(lockLook==false)
+                HandleMouseLook();
             if(canJump)
                 HandleJump();
+                HandleCoyote();
             if(canCrouch)
                 HandleCrouch();
             if(canUseHeadbob)
@@ -169,28 +154,6 @@ public class FirstPersonController : MonoBehaviour
         moveDirection = (transform.TransformDirection(Vector3.forward)*currentInput.x) + (transform.TransformDirection(Vector3.right)*currentInput.y);
         moveDirection.y = moveDirectionY;
     }
-
-    //private void HandleCoyote()
-    //{
-    //    if(!characterController.isGrounded)
-    //    {
-    //        isJumping=true;
-    //        coyoteDuration -= Time.deltaTime;
-    //    } else
-    //    {
-    //        isJumping=false;
-    //        coyoteDuration = 0.5f;
-    //    }
-
-    //    if(coyoteDuration<=0)
-    //    {
-    //        canCoyoteJump=false;
-    //    }
-    //    else
-    //    {
-    //        canCoyoteJump=true;
-    //    }
-    //}
     private void HandleMouseLook()
     {
         rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
@@ -203,6 +166,17 @@ public class FirstPersonController : MonoBehaviour
         if(ShouldJump)
             moveDirection.y = jumpForce;
 
+    }
+    private void HandleCoyote()
+    {
+        if(!characterController.isGrounded)
+        {
+            coyoteDuration -= Time.deltaTime;
+        }
+        else
+        {
+            coyoteDuration = 0.5f;
+        }
     }
     private void HandleCrouch()
     {

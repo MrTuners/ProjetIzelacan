@@ -15,11 +15,13 @@ TagManager:
   - GM
   - DiskZone
   - ray
+  - PuzzleZone
+  - noslide
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Slide
   - Water
   - UI
   - Block
