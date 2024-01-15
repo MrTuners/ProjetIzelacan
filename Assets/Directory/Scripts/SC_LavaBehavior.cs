@@ -11,7 +11,7 @@ public class SC_LavaBehavior : MonoBehaviour
     {
         if(endGame==true)
         {
-        lavaObject.transform.position = lavaObject.transform.position + new Vector3(0,1*Time.deltaTime,0);
+        lavaObject.transform.position = lavaObject.transform.position + new Vector3(0,2*Time.deltaTime,0);
         }
     }
     // Start is called before the first frame update
