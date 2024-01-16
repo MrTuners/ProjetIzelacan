@@ -41,7 +41,7 @@ MonoBehaviour:
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.6675392, g: 0.6675392, b: 0.6675392, a: 1}
+    m_Value: {r: 0.4716981, g: 0.44722322, b: 0.44722322, a: 1}
   maxFogDistance:
     m_OverrideState: 1
     m_Value: 500.3
@@ -62,13 +62,13 @@ MonoBehaviour:
     m_Value: 40.9
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 6.6
+    m_Value: 4.7
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.5566038, g: 0.32988805, b: 0.21266466, a: 1}
   globalLightProbeDimmer:
     m_OverrideState: 1
     m_Value: 1
