@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/Test_Kenzi.unity
     guid: d8413fb94e0994542b88fd3b34786ffe
+  - enabled: 1
+    path: Assets/Scenes/Test/Test_Angelo/Test_UI.unity
+    guid: ed7ea40a3da68e4479bb1109212bb611
   m_configObjects: {}
