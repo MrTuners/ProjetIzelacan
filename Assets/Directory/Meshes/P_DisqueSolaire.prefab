@@ -1,0 +1,353 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2647812025920319832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 627972667137450796}
+  m_Layer: 0
+  m_Name: P_DisqueSolaire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &627972667137450796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647812025920319832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 87.08376, y: -35.402462, z: -22.177753}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4620997041150320882}
+  - {fileID: 7029022849298501410}
+  - {fileID: 1346398785532031511}
+  - {fileID: 4133873410583468121}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1346398785532031510
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 627972667137450796}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9162369
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.402462
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.177753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+        type: 3}
+      propertyPath: m_Name
+      value: Disque Solaire 1,4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: afeda1ff3c7b3054ab73dbf0791b66e5, type: 3}
+--- !u!4 &1346398785532031511 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: afeda1ff3c7b3054ab73dbf0791b66e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1346398785532031510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4527470624074891186
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 627972667137450796}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9162369
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.402462
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.177753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+        type: 3}
+      propertyPath: m_Name
+      value: Disque Solaire 4,4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df55bb9e61a8f7d46bb09a139d9451d2, type: 3}
+--- !u!4 &4133873410583468121 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: df55bb9e61a8f7d46bb09a139d9451d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4527470624074891186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5164411811182151449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 627972667137450796}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9162369
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.402462
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.177753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8711e9dc60b39544f991f8e4033057bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Disque Solaire 3,4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8711e9dc60b39544f991f8e4033057bd, type: 3}
+--- !u!4 &4620997041150320882 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8711e9dc60b39544f991f8e4033057bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5164411811182151449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7351742074724018377
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 627972667137450796}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9162369
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.402462
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.177753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 47ec37115787e5c449529be73617ac36,
+        type: 3}
+      propertyPath: m_Name
+      value: Disque Solaire 2,4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 47ec37115787e5c449529be73617ac36, type: 3}
+--- !u!4 &7029022849298501410 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47ec37115787e5c449529be73617ac36,
+    type: 3}
+  m_PrefabInstance: {fileID: 7351742074724018377}
+  m_PrefabAsset: {fileID: 0}
