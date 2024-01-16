@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6671939450822053873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3573783688340271486}
+  m_Layer: 0
+  m_Name: P_DisqueLunaire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3573783688340271486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671939450822053873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 87.08376, y: -35.402462, z: -22.177753}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3362746836344078405}
+  - {fileID: 3936521887573464540}
+  - {fileID: 7763033696025866129}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2963466493610092462
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3573783688340271486}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9162369
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.402462
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.177753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+        type: 3}
+      propertyPath: m_Name
+      value: Disque Lunaire 3,3 cm
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a1d0ab677cd3b842aca25e1286ba7b2, type: 3}
+--- !u!4 &3362746836344078405 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4a1d0ab677cd3b842aca25e1286ba7b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2963466493610092462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3543185779660468791
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3573783688340271486}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9162369
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.402462
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.177753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0548b8fb690816849b75abc8b92da5ca,
+        type: 3}
+      propertyPath: m_Name
+      value: Disque Lunaire 2,3 cm
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0548b8fb690816849b75abc8b92da5ca, type: 3}
+--- !u!4 &3936521887573464540 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0548b8fb690816849b75abc8b92da5ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 3543185779660468791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7796134996942456954
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3573783688340271486}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9162369
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.402462
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.177753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e16d4883885dd84aa2198fed2718ae4,
+        type: 3}
+      propertyPath: m_Name
+      value: Disque Lunaire 1,3 cm
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e16d4883885dd84aa2198fed2718ae4, type: 3}
+--- !u!4 &7763033696025866129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e16d4883885dd84aa2198fed2718ae4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7796134996942456954}
+  m_PrefabAsset: {fileID: 0}
