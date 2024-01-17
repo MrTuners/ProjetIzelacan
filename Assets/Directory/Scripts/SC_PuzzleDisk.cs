@@ -3,9 +3,8 @@ using UnityEngine.UI;
 
 public class SC_PuzzleDisk : MonoBehaviour
 {
-    public RectTransform[] rays;
+    public Transform[] rays;
     public GameObject[] indicatorCubes; // Cube objects associated with each ray
-    public float rotationSpeed = 5f;
     public float rotationAmount = 90f; // Defined rotation amount
 
     private int currentIndex = 0;
@@ -32,11 +31,11 @@ public class SC_PuzzleDisk : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            RotateCurrentRay(-rotationSpeed); // Rotate left by a continuous speed
+            RotateCurrentRay(-rotationAmount); // Rotate left by a continuous speed
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            RotateCurrentRay(rotationSpeed); // Rotate right by a continuous speed
+            RotateCurrentRay(rotationAmount); // Rotate right by a continuous speed
         }
 
         UpdateIndicator();
@@ -44,7 +43,7 @@ public class SC_PuzzleDisk : MonoBehaviour
 
     void RotateCurrentRay(float amount)
     {
-        rays[currentIndex].Rotate(Vector3.forward, amount);
+        rays[currentIndex].Rotate(Vector3.right, amount);
     }
 
     void SelectNextRay()

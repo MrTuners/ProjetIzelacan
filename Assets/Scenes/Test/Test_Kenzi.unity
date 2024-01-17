@@ -1012,9 +1012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a27a3cdd3eca045ad2ef6a65cd64d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadingScreen: {fileID: 2044085106}
-  LoadingBarFill: {fileID: 1267736959}
-  sceneId: 0
 --- !u!1 &750751430
 GameObject:
   m_ObjectHideFlags: 0
