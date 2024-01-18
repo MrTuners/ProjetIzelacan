@@ -5,7 +5,7 @@ public class SC_PuzzleDisk : MonoBehaviour
 {
     public Transform[] rays;
     public GameObject[] indicatorCubes; // Cube objects associated with each ray
-    public float rotationAmount = 90f; // Defined rotation amount
+    public float rotationAmount = -90f;
 
     private int currentIndex = 0;
 
@@ -31,19 +31,19 @@ public class SC_PuzzleDisk : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            RotateCurrentRay(-rotationAmount); // Rotate left by a continuous speed
+            RotateCurrentRay(-rotationAmount);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            RotateCurrentRay(rotationAmount); // Rotate right by a continuous speed
+            RotateCurrentRay(rotationAmount);
         }
 
         UpdateIndicator();
     }
 
-    void RotateCurrentRay(float amount)
+    void RotateCurrentRay(float rotationAmount)
     {
-        rays[currentIndex].Rotate(Vector3.right, amount);
+        rays[currentIndex].localRotation = Quaternion.Euler(rotationAmount,0f,0f);
     }
 
     void SelectNextRay()
