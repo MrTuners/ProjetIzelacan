@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_6d9151944a1444bdbd3770da48e737f3_Out_0_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 8b500b5269e443c4ba7f230879677637, type: 3}
+        m_Texture: {fileID: 2800000, guid: 039883e079359344fa718d248ddd507d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_91a7549696ef4ee99422f8f5f4f24bc0_Out_0_Texture2D:
@@ -135,7 +135,7 @@ Material:
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FresnelColor: {r: 57.037914, g: 3.887855, b: 0.89588183, a: 0}
+    - _FresnelColor: {r: 114.07583, g: 7.77571, b: 1.7917637, a: 0}
     - _bottomremap: {r: 0, g: 1, b: 0, a: 0}
     - _lava_color: {r: 13.886794, g: 1.2626652, b: 0.07270586, a: 0}
     - _lavanormalspeed: {r: 0, g: 0.02, b: 0, a: 0}
