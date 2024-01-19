@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37232843, g: 0.194343, b: 0.10152556, a: 1}
+  m_IndirectSpecularColor: {r: 0.40264016, g: 0.22281817, b: 0.13715626, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4958,7 +4958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1772174205
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6861,7 +6861,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1603230435245277524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1214014160}
+        m_TargetAssemblyTypeName: SC_LoadScene, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Test_Kenzi
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2003356130001586782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7630,7 +7642,6 @@ GameObject:
   - component: {fileID: 1324357512900997483}
   - component: {fileID: 1814679047099852921}
   - component: {fileID: 1130898710}
-  - component: {fileID: 7758429489491889707}
   m_Layer: 5
   m_Name: Story
   m_TagString: Untagged
@@ -7638,19 +7649,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7758429489491889707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7758429489491889706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28a27a3cdd3eca045ad2ef6a65cd64d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creditPanel: {fileID: 0}
 --- !u!224 &8013445414603120584
 RectTransform:
   m_ObjectHideFlags: 0
