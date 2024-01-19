@@ -14,7 +14,7 @@ public class SC_DiskInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(raycastScript.enterDisk==true && Input.GetKeyDown(KeyCode.F))
+        if(solvingDisk==false && raycastScript.enterDisk==true && Input.GetKeyDown(KeyCode.F))
         {
             canSolve = true;
         }
