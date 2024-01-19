@@ -25,6 +25,7 @@ public class SC_PuzzleDisk : MonoBehaviour
 
     void Update()
     {
+        DiskCompletion();
         if(diskScript.solvingDisk==true && !diskDone==true)
         {
             HandleInput();
@@ -71,6 +72,18 @@ public class SC_PuzzleDisk : MonoBehaviour
     void SelectPreviousRay()
     {
         currentIndex = (currentIndex - 1 + rays.Length) % rays.Length;
+    }
+
+    void DiskCompletion()
+    {
+        if(targetRotation[0]==Quaternion.Euler(0,90,0) && targetRotation[1] == Quaternion.Euler(0,180,0) && targetRotation[2] == Quaternion.Euler(0,270,0))
+        {
+            diskDone=true;
+        }
+        else
+        {
+            diskDone=false;
+        }
     }
 
     void UpdateIndicator()
