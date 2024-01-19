@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class SC_PlayerRaycast : MonoBehaviour
 {
     public LayerMask blocMask;
-    public LayerMask diskMask;
+    public LayerMask lunarMask;
+    public LayerMask solarMask;
     public GameObject textMove;
     public GameObject diskText;
     public bool canMove;
-    public bool enterDisk;
+    public bool enterLdisk;
+    public bool enterSdisk;
 
     RaycastHit hit;
 
@@ -23,15 +25,21 @@ public class SC_PlayerRaycast : MonoBehaviour
             textMove.SetActive(true);
             canMove=true;
         }
-        else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5, diskMask))
+        else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5, lunarMask))
         {
             diskText.SetActive(true);
-            enterDisk=true;
+            enterLdisk=true;
+        }
+        else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5, solarMask))
+        {
+            diskText.SetActive(true);
+            enterSdisk=true;
         }
         else
         {
             diskText.SetActive(false);
-            enterDisk=false;
+            enterLdisk=false;
+            enterSdisk=false;
             textMove.SetActive(false);
             canMove=false;
         }

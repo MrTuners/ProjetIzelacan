@@ -1,38 +1,39 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SC_PuzzleDisk : MonoBehaviour
+public class SC_SolarDisk : MonoBehaviour
 {
     public Vector3 currentAngle;
     public SC_DiskInteraction diskScript;
     public Transform[] rays;
     public GameObject[] indicatorCubes;
     public float rotationAmount = -90f;
-    public bool diskDone = false;
+    public bool diskSDone = false;
     private int currentIndex = 0;
-    public  Quaternion[] targetRotation;
+    public  Quaternion[] targetRotation1;
 
     void Start()
     {
         UpdateIndicator();
-        targetRotation=new Quaternion[3];
+        targetRotation1=new Quaternion[4];
         currentAngle = new Vector3(0,0,0);
-        targetRotation[0] = Quaternion.Euler(0,90,0);
-        targetRotation[1] = Quaternion.Euler(0,180,0);
-        targetRotation[2] = Quaternion.Euler(0,270,0);
+        targetRotation1[0] = Quaternion.Euler(0,90,0);
+        targetRotation1[1] = Quaternion.Euler(0,180,0);
+        targetRotation1[2] = Quaternion.Euler(0,270,0);
+        targetRotation1[3] = Quaternion.Euler(0,180,0);
     }
 
     void Update()
     {
         DiskCompletion();
         
-        if(diskScript.solvingDisk==true && !diskDone==true)
+        if(diskScript.solvingDisk==true && !diskSDone==true)
         {
             HandleInput();
         }
         for(int i=0; i<rays.Length; i++)
         {
-             rays[i].localRotation = Quaternion.Lerp(rays[i].localRotation, targetRotation[i],Time.deltaTime*5);
+             rays[i].localRotation = Quaternion.Lerp(rays[i].localRotation, targetRotation1[i],Time.deltaTime*5);
         }
     }
 
@@ -61,7 +62,7 @@ public class SC_PuzzleDisk : MonoBehaviour
     void RotateCurrentRay(float rotationAmount)
     {
         currentAngle = currentAngle + new Vector3(0,rotationAmount,0);
-        targetRotation[currentIndex] = Quaternion.Euler(currentAngle);
+        targetRotation1[currentIndex] = Quaternion.Euler(currentAngle);
     }
 
     void SelectNextRay()
@@ -76,13 +77,13 @@ public class SC_PuzzleDisk : MonoBehaviour
 
     void DiskCompletion()
     {
-        if(CheckRange(targetRotation[0].eulerAngles.y, 0f, 10f) && CheckRange(targetRotation[1].eulerAngles.y, 0f, 10f) && CheckRange(targetRotation[2].eulerAngles.y, 0f, 10f))
+        if(CheckRange(targetRotation1[0].eulerAngles.y, 0f, 10f) && CheckRange(targetRotation1[1].eulerAngles.y, 0f, 10f) && CheckRange(targetRotation1[2].eulerAngles.y, 0f, 10f) && CheckRange(targetRotation1[3].eulerAngles.y, 0f, 10f))
         {
-            diskDone=true;
+            diskSDone=true;
         }
         else
         {
-            diskDone=false;
+            diskSDone=false;
         }
     }
 
