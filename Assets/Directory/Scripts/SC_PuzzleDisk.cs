@@ -9,9 +9,8 @@ public class SC_PuzzleDisk : MonoBehaviour
     public GameObject[] indicatorCubes;
     public float rotationAmount = -90f;
     public bool diskDone = false;
-
     private int currentIndex = 0;
-    public Quaternion[] targetRotation;
+    public  Quaternion[] targetRotation;
 
     void Start()
     {
@@ -26,14 +25,15 @@ public class SC_PuzzleDisk : MonoBehaviour
     void Update()
     {
         DiskCompletion();
+        
         if(diskScript.solvingDisk==true && !diskDone==true)
         {
             HandleInput();
         }
         for(int i=0; i<rays.Length; i++)
-            {
+        {
              rays[i].localRotation = Quaternion.Lerp(rays[i].localRotation, targetRotation[i],Time.deltaTime*5);
-            }
+        }
     }
 
     void HandleInput()
@@ -76,7 +76,7 @@ public class SC_PuzzleDisk : MonoBehaviour
 
     void DiskCompletion()
     {
-        if(targetRotation[0]==Quaternion.Euler(0,90,0) && targetRotation[1] == Quaternion.Euler(0,180,0) && targetRotation[2] == Quaternion.Euler(0,270,0))
+        if(CheckRange(targetRotation[0].eulerAngles.y, 0f, 10f) && CheckRange(targetRotation[1].eulerAngles.y, 0f, 10f) && CheckRange(targetRotation[2].eulerAngles.y, 0f, 10f))
         {
             diskDone=true;
         }
@@ -85,6 +85,11 @@ public class SC_PuzzleDisk : MonoBehaviour
             diskDone=false;
         }
     }
+
+    private bool CheckRange (float eulerAngles, float targetAngle, float range)
+{
+    return (eulerAngles > targetAngle - range && eulerAngles < targetAngle + range);
+}
 
     void UpdateIndicator()
     {
