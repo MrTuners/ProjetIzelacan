@@ -3,20 +3,36 @@ using UnityEngine.UI;
 
 public class SC_PuzzleDisk : MonoBehaviour
 {
+    public Vector3 currentAngle;
+    public SC_DiskInteraction diskScript;
     public Transform[] rays;
-    public GameObject[] indicatorCubes; // Cube objects associated with each ray
+    public GameObject[] indicatorCubes;
     public float rotationAmount = -90f;
+    public bool diskDone = false;
 
     private int currentIndex = 0;
+    public Quaternion[] targetRotation;
 
     void Start()
     {
         UpdateIndicator();
+        targetRotation=new Quaternion[3];
+        currentAngle = new Vector3(0,0,0);
+        targetRotation[0] = Quaternion.Euler(0,90,0);
+        targetRotation[1] = Quaternion.Euler(0,180,0);
+        targetRotation[2] = Quaternion.Euler(0,270,0);
     }
 
     void Update()
     {
-        HandleInput();
+        if(diskScript.solvingDisk==true && !diskDone==true)
+        {
+            HandleInput();
+        }
+        for(int i=0; i<rays.Length; i++)
+            {
+             rays[i].localRotation = Quaternion.Lerp(rays[i].localRotation, targetRotation[i],Time.deltaTime*5);
+            }
     }
 
     void HandleInput()
@@ -43,7 +59,8 @@ public class SC_PuzzleDisk : MonoBehaviour
 
     void RotateCurrentRay(float rotationAmount)
     {
-        rays[currentIndex].localRotation = Quaternion.Euler(rotationAmount,0f,0f);
+        currentAngle = currentAngle + new Vector3(0,rotationAmount,0);
+        targetRotation[currentIndex] = Quaternion.Euler(currentAngle);
     }
 
     void SelectNextRay()
@@ -58,13 +75,11 @@ public class SC_PuzzleDisk : MonoBehaviour
 
     void UpdateIndicator()
     {
-        // Disable all indicator cubes
         foreach (var cube in indicatorCubes)
         {
             cube.SetActive(false);
         }
 
-        // Enable the indicator cube for the current ray
         if (currentIndex < indicatorCubes.Length)
         {
             indicatorCubes[currentIndex].SetActive(true);
