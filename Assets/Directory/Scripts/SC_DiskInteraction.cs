@@ -8,10 +8,11 @@ public class SC_DiskInteraction : MonoBehaviour
     public FirstPersonController playerScript;
     public SC_LunarDisk lunarScript;
     public SC_SolarDisk solarScript;
-    public Camera playerCamera;
+    public GameObject playerCamera;
     public GameObject lunarCamera;
     public GameObject solarCamera;
-    public bool solvingDisk = false;
+    public bool solvingLunar = false;
+    public bool solvingSolar = false;
     public bool openGate = false;
     public Animator gateAnimation;
 
@@ -27,45 +28,51 @@ public class SC_DiskInteraction : MonoBehaviour
         {
             StartLunarPuzzle();
         }
-        else if (raycastScript.enterSdisk==true && Input.GetKeyDown(KeyCode.F))
+
+        if (raycastScript.enterSdisk==true && Input.GetKeyDown(KeyCode.F))
         {
             StartSolarPuzzle();
         }
 
-        if(lunarScript.diskLDone==true)
+        if(solvingLunar==true && Input.GetKeyDown(KeyCode.Escape))
         {
             playerScript.canMove=true;
-            playerCamera.enabled=true;
+        playerCamera.SetActive(true);
         lunarCamera.SetActive(false);
-        solvingDisk=false;
+        solvingLunar=false;
         }
-
-        if(solarScript.diskSDone==true)
+        if(solvingSolar==true && Input.GetKeyDown(KeyCode.Escape))
         {
             playerScript.canMove=true;
-            playerCamera.enabled=true;
+        playerCamera.SetActive(true);
         solarCamera.SetActive(false);
-        solvingDisk=false;
+        solvingSolar=false;
         }
     }
 
     public void StartLunarPuzzle()
     {
         playerScript.canMove=false;
-        playerCamera.enabled=false;
+        playerCamera.SetActive(false);
         lunarCamera.SetActive(true);
-        solvingDisk=true;
+        solvingLunar=true;
     }
     public void StartSolarPuzzle()
     {
         playerScript.canMove=false;
-        playerCamera.enabled=false;
+        playerCamera.SetActive(false);
         solarCamera.SetActive(true);
-        solvingDisk=true;
+        solvingSolar=true;
     }
 
     public void OpenGate()
     {
         gateAnimation.SetTrigger("GateTrigger");
+        playerScript.canMove=true;
+        playerCamera.SetActive(true);
+        solarCamera.SetActive(false);
+        lunarCamera.SetActive(false);
+        solvingSolar=false;
+        solvingLunar=false;
     }
 }

@@ -8,12 +8,13 @@ public class SC_LunarDisk : MonoBehaviour
     public Transform[] rays;
     public GameObject[] indicatorCubes;
     public float rotationAmount = -90f;
-    public bool diskLDone = false;
+    public bool diskLDone;
     private int currentIndex = 0;
     public  Quaternion[] targetRotation;
 
     void Start()
     {
+        diskLDone = false;
         UpdateIndicator();
         targetRotation=new Quaternion[3];
         currentAngle = new Vector3(0,0,0);
@@ -26,7 +27,7 @@ public class SC_LunarDisk : MonoBehaviour
     {
         DiskCompletion();
         
-        if(diskScript.solvingDisk==true && !diskLDone==true)
+        if(diskScript.solvingLunar==true && !diskLDone==true)
         {
             HandleInput();
         }
