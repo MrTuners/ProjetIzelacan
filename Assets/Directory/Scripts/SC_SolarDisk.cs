@@ -3,20 +3,21 @@ using UnityEngine.UI;
 
 public class SC_SolarDisk : MonoBehaviour
 {
-    public Vector3 currentAngle;
+    public Vector3 currentAngle1;
     public SC_DiskInteraction diskScript;
-    public Transform[] rays;
-    public GameObject[] indicatorCubes;
-    public float rotationAmount = -90f;
-    public bool diskSDone = false;
-    private int currentIndex = 0;
+    public Transform[] rays1;
+    public GameObject[] indicatorCubes1;
+    public float rotationAmount1 = -90f;
+    public bool diskSDone;
+    private int currentIndex1 = 0;
     public  Quaternion[] targetRotation1;
 
     void Start()
     {
+        diskSDone = false;
         UpdateIndicator();
         targetRotation1=new Quaternion[4];
-        currentAngle = new Vector3(0,0,0);
+        currentAngle1 = new Vector3(0,0,0);
         targetRotation1[0] = Quaternion.Euler(0,90,0);
         targetRotation1[1] = Quaternion.Euler(0,180,0);
         targetRotation1[2] = Quaternion.Euler(0,270,0);
@@ -27,13 +28,13 @@ public class SC_SolarDisk : MonoBehaviour
     {
         DiskCompletion();
         
-        if(diskScript.solvingDisk==true && !diskSDone==true)
+        if(diskScript.solvingSolar==true && !diskSDone==true)
         {
             HandleInput();
         }
-        for(int i=0; i<rays.Length; i++)
+        for(int i=0; i<rays1.Length; i++)
         {
-             rays[i].localRotation = Quaternion.Lerp(rays[i].localRotation, targetRotation1[i],Time.deltaTime*5);
+             rays1[i].localRotation = Quaternion.Lerp(rays1[i].localRotation, targetRotation1[i],Time.deltaTime*5);
         }
     }
 
@@ -49,30 +50,30 @@ public class SC_SolarDisk : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            RotateCurrentRay(-rotationAmount);
+            RotateCurrentRay(-rotationAmount1);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            RotateCurrentRay(rotationAmount);
+            RotateCurrentRay(rotationAmount1);
         }
 
         UpdateIndicator();
     }
 
-    void RotateCurrentRay(float rotationAmount)
+    void RotateCurrentRay(float rotationAmount1)
     {
-        currentAngle = currentAngle + new Vector3(0,rotationAmount,0);
-        targetRotation1[currentIndex] = Quaternion.Euler(currentAngle);
+        currentAngle1 = currentAngle1 + new Vector3(0,rotationAmount1,0);
+        targetRotation1[currentIndex1] = Quaternion.Euler(currentAngle1);
     }
 
     void SelectNextRay()
     {
-        currentIndex = (currentIndex + 1) % rays.Length;
+        currentIndex1 = (currentIndex1 + 1) % rays1.Length;
     }
 
     void SelectPreviousRay()
     {
-        currentIndex = (currentIndex - 1 + rays.Length) % rays.Length;
+        currentIndex1 = (currentIndex1 - 1 + rays1.Length) % rays1.Length;
     }
 
     void DiskCompletion()
@@ -94,14 +95,14 @@ public class SC_SolarDisk : MonoBehaviour
 
     void UpdateIndicator()
     {
-        foreach (var cube in indicatorCubes)
+        foreach (var cube in indicatorCubes1)
         {
             cube.SetActive(false);
         }
 
-        if (currentIndex < indicatorCubes.Length)
+        if (currentIndex1 < indicatorCubes1.Length)
         {
-            indicatorCubes[currentIndex].SetActive(true);
+            indicatorCubes1[currentIndex1].SetActive(true);
         }
     }
 }
