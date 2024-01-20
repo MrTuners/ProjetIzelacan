@@ -5,6 +5,7 @@ using UnityEngine;
 public class SC_DiskInteraction : MonoBehaviour
 {
     public SC_PlayerRaycast raycastScript;
+    public GameObject puzzleInstructions;
     public FirstPersonController playerScript;
     public SC_LunarDisk lunarScript;
     public SC_SolarDisk solarScript;
@@ -32,6 +33,15 @@ public class SC_DiskInteraction : MonoBehaviour
         if (raycastScript.enterSdisk==true && Input.GetKeyDown(KeyCode.F))
         {
             StartSolarPuzzle();
+        }
+
+        if(solvingLunar==true || solvingSolar==true)
+        {
+            puzzleInstructions.SetActive(true);
+        }
+        else
+        {
+            puzzleInstructions.SetActive(false);
         }
 
         if(solvingLunar==true && Input.GetKeyDown(KeyCode.Escape))
@@ -67,12 +77,12 @@ public class SC_DiskInteraction : MonoBehaviour
 
     public void OpenGate()
     {
-        gateAnimation.SetTrigger("GateTrigger");
         playerScript.canMove=true;
         playerCamera.SetActive(true);
         solarCamera.SetActive(false);
         lunarCamera.SetActive(false);
         solvingSolar=false;
         solvingLunar=false;
+        gateAnimation.SetTrigger("GateTrigger");
     }
 }

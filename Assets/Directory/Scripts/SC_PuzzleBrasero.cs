@@ -19,14 +19,14 @@ public class SC_PuzzleBrasero : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider ray)
     {
-        ReliableOnTriggerExit.NotifyTriggerEnter(other, gameObject, OnTriggerExit);
+        ReliableOnTriggerExit.NotifyTriggerEnter(ray, gameObject, OnTriggerExit);
         rayEmitted=true;
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider ray)
     {
-        ReliableOnTriggerExit.NotifyTriggerExit(other, gameObject);
+        ReliableOnTriggerExit.NotifyTriggerExit(ray, gameObject);
         rayEmitted=false;
     }
 }
