@@ -6,17 +6,37 @@ using UnityEngine.SceneManagement;
 public class SC_PlayerDeath : MonoBehaviour
 {
     public SC_DartsTrap dartsScript;
+    public GameObject deathScreen;
+    public FirstPersonController playerScript;
     private void OnTriggerEnter(Collider Player)
 {
     if (Player.gameObject.CompareTag("Darts"))
     {
-        SceneManager.LoadScene("Test_Blockout");
+        DeathScreen();
     } else if (Player.gameObject.CompareTag("Axe"))
     {
-        SceneManager.LoadScene("Test_Blockout");
+        DeathScreen();
     } else if (Player.gameObject.CompareTag("Plate"))
     {
         dartsScript.DartFires();
     }
+}
+
+private void DeathScreen()
+{
+    Cursor.visible=true;
+    Cursor.lockState=CursorLockMode.None;
+    playerScript.canMove=false;
+    deathScreen.SetActive(true);
+}
+
+public void RetryButton()
+{
+    SceneManager.LoadScene("Test_Blockout");
+}
+
+public void QuitButton()
+{
+    Application.Quit();
 }
 }
