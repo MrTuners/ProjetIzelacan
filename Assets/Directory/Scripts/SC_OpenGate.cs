@@ -6,8 +6,11 @@ public class SC_OpenGate : MonoBehaviour
 {
     public Animator gateAnimation;
     // Start is called before the first frame update
-    private void OnTriggerEnter(Collider ray)
+    private void OnTriggerEnter(Collider other)
     {
-        gateAnimation.SetTrigger("Open");
+         if (other.gameObject.tag == "ray") {
+            gateAnimation.SetTrigger("Open");
+        }
+        
     }
 }
