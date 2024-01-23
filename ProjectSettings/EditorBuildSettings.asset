@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/Test_Kenzi.unity
     guid: d8413fb94e0994542b88fd3b34786ffe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test/Test_Blockout.unity
     guid: 631ece996e68b7947ac55b76982ab99d
+  - enabled: 1
+    path: Assets/Scenes/Test/Test_BlockoutRayan.unity
+    guid: 305dd08c224871d4b89290807f0e7679
   m_configObjects: {}
