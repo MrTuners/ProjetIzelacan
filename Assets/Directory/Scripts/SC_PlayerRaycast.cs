@@ -8,11 +8,14 @@ public class SC_PlayerRaycast : MonoBehaviour
     public LayerMask blocMask;
     public LayerMask lunarMask;
     public LayerMask solarMask;
+    public LayerMask endMask;
     public GameObject textMove;
     public GameObject diskText;
+    public GameObject endText;
     public bool canMove;
     public bool enterLdisk;
     public bool enterSdisk;
+    public bool canEnd;
 
     RaycastHit hit;
 
@@ -35,13 +38,20 @@ public class SC_PlayerRaycast : MonoBehaviour
             diskText.SetActive(true);
             enterSdisk=true;
         }
+        else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5, endMask))
+        {
+            endText.SetActive(true);
+            canEnd=true;
+        }
         else
         {
+            endText.SetActive(false);
             diskText.SetActive(false);
             enterLdisk=false;
             enterSdisk=false;
             textMove.SetActive(false);
             canMove=false;
+            canEnd=false;
         }
     }
 

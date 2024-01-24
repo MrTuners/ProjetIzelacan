@@ -6,12 +6,13 @@ public class SC_LavaBehavior : MonoBehaviour
 {
     public GameObject lavaObject;
     public bool endGame = false;
+    public float lavaSpeed;
 
     void Update()
     {
         if(endGame==true)
         {
-        lavaObject.transform.position = lavaObject.transform.position + new Vector3(0,2*Time.deltaTime,0);
+        lavaObject.transform.position = lavaObject.transform.position + new Vector3(0,lavaSpeed*Time.deltaTime,0);
         }
     }
     // Start is called before the first frame update

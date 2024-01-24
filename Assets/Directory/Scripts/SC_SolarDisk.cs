@@ -18,10 +18,10 @@ public class SC_SolarDisk : MonoBehaviour
         UpdateIndicator();
         targetRotation1=new Quaternion[4];
         currentAngle1 = new Vector3(0,0,0);
-        targetRotation1[0] = Quaternion.Euler(0,90,0);
-        targetRotation1[1] = Quaternion.Euler(0,180,0);
-        targetRotation1[2] = Quaternion.Euler(0,270,0);
-        targetRotation1[3] = Quaternion.Euler(0,180,0);
+        targetRotation1[0] = Quaternion.Euler(0,0,0);
+        targetRotation1[1] = Quaternion.Euler(0,0,0);
+        targetRotation1[2] = Quaternion.Euler(0,0,0);
+        targetRotation1[3] = Quaternion.Euler(0,0,0);
     }
 
     void Update()
