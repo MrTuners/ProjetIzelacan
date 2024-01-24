@@ -16,7 +16,10 @@ public class SC_PlayerDeath : MonoBehaviour
     } else if (Player.gameObject.CompareTag("Axe"))
     {
         DeathScreen();
-    } else if (Player.gameObject.CompareTag("Plate"))
+    } else if (Player.gameObject.CompareTag("lavaBlock"))
+    {
+        DeathScreen();
+    }else if (Player.gameObject.CompareTag("Plate"))
     {
         dartsScript.DartFires();
     }
@@ -32,7 +35,7 @@ private void DeathScreen()
 
 public void RetryButton()
 {
-    SceneManager.LoadScene("Test_Blockout");
+    SceneManager.LoadScene("Test_BlockoutRayan");
 }
 
 public void QuitButton()

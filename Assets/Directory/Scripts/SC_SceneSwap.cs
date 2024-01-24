@@ -9,6 +9,6 @@ public class SC_SceneSwap : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(sceneToSwap);
+        SceneManager.LoadSceneAsync(sceneToSwap);
     }
 }
