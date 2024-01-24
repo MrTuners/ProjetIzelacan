@@ -17,6 +17,7 @@ TagManager:
   - ray
   - PuzzleZone
   - noslide
+  - EndGame
   layers:
   - Default
   - TransparentFX
