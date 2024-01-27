@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SC_PlayerDeath : MonoBehaviour
 {
     public SC_DartsTrap dartsScript;
+    public SC_GameManager GMscript;
     public GameObject deathScreen;
     public FirstPersonController playerScript;
     private void OnTriggerEnter(Collider Player)
@@ -35,7 +36,11 @@ private void DeathScreen()
 
 public void RetryButton()
 {
-    SceneManager.LoadScene("Test_BlockoutRayan");
+    transform.position = GMscript.lastCheckPointPos;
+    Cursor.visible=false;
+    Cursor.lockState=CursorLockMode.Locked;
+    playerScript.canMove=true;
+    deathScreen.SetActive(false);
 }
 
 public void QuitButton()

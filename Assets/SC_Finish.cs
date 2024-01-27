@@ -10,6 +10,8 @@ public class SC_Finish : MonoBehaviour
     if(other.CompareTag("Player"))
         {
             Time.timeScale=0f;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             EGPanel.SetActive(true);
         }
     }

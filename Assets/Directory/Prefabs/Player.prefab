@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6169969339912394862}
   - component: {fileID: 6169969339912394849}
   - component: {fileID: 1861800673}
-  - component: {fileID: 3901181291487122954}
   - component: {fileID: 2860848103642434145}
-  m_Layer: 10
+  - component: {fileID: 5713824195199351856}
+  m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ Camera:
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!81 &6169969339912394849
@@ -191,7 +191,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3901181291487122954
+--- !u!114 &2860848103642434145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169969339912394851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be4c30d2b0334b42b411db83f81d0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocMask:
+    serializedVersion: 2
+    m_Bits: 64
+  lunarMask:
+    serializedVersion: 2
+    m_Bits: 128
+  solarMask:
+    serializedVersion: 2
+    m_Bits: 256
+  endMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  textMove: {fileID: 0}
+  diskText: {fileID: 0}
+  endText: {fileID: 0}
+  canMove: 0
+  enterLdisk: 0
+  enterSdisk: 0
+  canEnd: 0
+--- !u!114 &5713824195199351856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -320,32 +351,6 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
---- !u!114 &2860848103642434145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169969339912394851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be4c30d2b0334b42b411db83f81d0c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blocMask:
-    serializedVersion: 2
-    m_Bits: 64
-  lunarMask:
-    serializedVersion: 2
-    m_Bits: 128
-  solarMask:
-    serializedVersion: 2
-    m_Bits: 256
-  textMove: {fileID: 0}
-  diskText: {fileID: 0}
-  canMove: 0
-  enterLdisk: 0
-  enterSdisk: 0
 --- !u!1 &6169969340910756936
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,9 +363,9 @@ GameObject:
   - component: {fileID: 6169969340910756918}
   - component: {fileID: 6169969340910756937}
   - component: {fileID: 6912611037999143325}
-  - component: {fileID: 3963449654759332877}
   - component: {fileID: 7114501268132750418}
-  m_Layer: 10
+  - component: {fileID: 6173816141897082}
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -381,7 +386,7 @@ Transform:
   m_Children:
   - {fileID: 6169969339912394848}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &6169969340910756918
 CharacterController:
@@ -437,7 +442,7 @@ MonoBehaviour:
   walkSpeed: 6
   crouchSpeed: 1.5
   sprintSpeed: 12
-  slopeSpeed: 120
+  slopeSpeed: 160
   lookSpeedX: 2
   lookSpeedY: 2
   upperLookLimit: 80
@@ -568,19 +573,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3963449654759332877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169969340910756936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfae1cc53398460468ebf5c7d0ceb66a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dartsScript: {fileID: 0}
 --- !u!114 &7114501268132750418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,3 +585,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428f4a1245fb4c94eb7964653e9ee31c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPosition: {fileID: 6169969340910756919}
+  GM: {fileID: 0}
+  respawnPos: {x: 175.58, y: 4.6, z: -33.614}
+  characterController: {fileID: 6169969340910756918}
+--- !u!114 &6173816141897082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169969340910756936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfae1cc53398460468ebf5c7d0ceb66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dartsScript: {fileID: 0}
+  deathScreen: {fileID: 0}
+  playerScript: {fileID: 6169969340910756937}
